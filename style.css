@@ -1,0 +1,120 @@
+:root {
+  --indigo: #4f46e5;
+  --zinc: #fafafa;
+  --gray: #4b5563;
+  --emerald: #10b981;
+  --red: #f87171;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: url("img/bg-intro-desktop.png");
+  background-color: var(--red);
+}
+
+/* container */
+
+.container {
+  width: 90%;
+  max-width: 120rem;
+  margin: 20rem auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7.5rem;
+}
+
+/* left */
+#section-cta-message {
+  margin: auto 0;
+}
+
+.title {
+  color: var(--zinc);
+  font-size: 5.2rem;
+  line-height: 6rem;
+  margin-bottom: 3rem;
+}
+
+.description {
+  color: var(--zinc);
+  font-size: 1.6rem;
+  line-height: 3rem;
+}
+
+/* right */
+
+.trial-fee {
+  color: var(--zinc);
+  background-color: var(--indigo);
+  font-size: 1.6rem;
+  padding: 1.8rem 2rem;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 3rem;
+  box-shadow: 0 8px 2px rgba(0, 0, 0, 0.2);
+}
+
+.form-container {
+  background-color: var(--zinc);
+  padding: 3.2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 2px rgba(0, 0, 0, 0.2);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+input {
+  background-color: var(--zinc);
+  font-weight: 500;
+  padding: 1.8rem;
+  border: 1px solid rgb(231, 226, 226);
+  border-radius: 5px;
+}
+
+input::placeholder {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+}
+
+.claim-trial {
+  background-color: var(--emerald);
+  color: var(--zinc);
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1.8rem 2rem;
+  margin-top: 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.terms-and-service {
+  color: var(--gray);
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.t-s {
+  color: var(--red);
+}

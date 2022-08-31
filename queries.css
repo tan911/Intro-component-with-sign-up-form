@@ -1,0 +1,58 @@
+/* Below 1054px */
+@media (max-width: 66em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+/* Below 940px */
+@media (max-width: 58em) {
+  .container {
+    gap: 6rem;
+  }
+
+  .title {
+    font-size: 4.4rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .terms-and-service {
+    font-size: 0.9rem;
+  }
+}
+
+/* Below 800px */
+@media (max-width: 50em) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .title,
+  .description {
+    text-align: center;
+  }
+
+  .terms-and-service {
+    font-size: 1.2rem;
+  }
+}
+
+/* Below 477px */
+@media (max-width: 30em) {
+  .trial-fee,
+  .claim-trial {
+    font-size: 1.8rem;
+  }
+
+  .claim-trial {
+    box-shadow: 0 8px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  input::placeholder {
+    font-size: 1.8rem;
+  }
+
+  .terms-and-service {
+    font-size: 1.4em;
+  }
+}

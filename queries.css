@@ -24,6 +24,7 @@
 /* Below 800px */
 @media (max-width: 50em) {
   .container {
+    margin: 10rem auto;
     grid-template-columns: 1fr;
   }
 

@@ -36,14 +36,33 @@
               <p><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
             </div>
             <div class="form-container">
-              <form action="">
-                <input type="text" placeholder="First Name" />
-                <input type="text" placeholder="Last Name" />
-                <input type="email" placeholder="Email Address" />
-                <input type="password" placeholder="Password" />
+              <form id="form" action="#">
+                <div class="input-container">
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    id="firstName"
+                    autofocus
+                  />
+                  <span id="message"></span>
+                </div>
+                <div class="input-container">
+                  <input type="text" placeholder="Last Name" id="lastName" />
+                  <span id="message"></span>
+                </div>
+                <div class="input-container">
+                  <input type="email" placeholder="Email Address" id="email" />
+                  <span id="message"></span>
+                </div>
+                <div class="input-container">
+                  <input type="password" placeholder="Password" id="password" />
+                  <span id="message"></span>
+                </div>
               </form>
 
-              <div class="claim-trial">Claim your Free Trial</div>
+              <div class="claim-trial claim-btn">
+                <button type="submit" class="btn">Claim your Free Trial</button>
+              </div>
 
               <p class="terms-and-service">
                 By clicking the button, you are agreeing to our
@@ -54,5 +73,7 @@
         </section>
       </div>
     </main>
+
+    <script src="script.js"></script>
   </body>
 </html>

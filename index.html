@@ -4,76 +4,89 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
+      rel="shortcut icon"
+      href="/assets/img/favicon-32x32.png"
+      type="image/x-icon"
     />
-
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="queries.css" />
-    <title>Intro component with sign-up form</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Sign up</title>
   </head>
   <body>
-    <main id="main">
-      <div class="container">
-        <section id="section-cta-message">
-          <div class="left">
-            <h1 class="title">Learn to code by watching others</h1>
-            <p class="description">
-              See how experience developers solve problems in real-time.
-              Watching scripted turtorials is a great. but understanding how
-              developers thinks is invaluable.
-            </p>
-          </div>
-        </section>
-        <section id="section-cta-form">
-          <div class="right">
-            <div class="trial-fee">
-              <p><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
-            </div>
-            <div class="form-container">
-              <form id="form" action="#">
-                <div class="input-container">
-                  <input
-                    type="text"
-                    placeholder="First Name"
-                    id="firstName"
-                    autofocus
-                  />
-                  <span id="message"></span>
-                </div>
-                <div class="input-container">
-                  <input type="text" placeholder="Last Name" id="lastName" />
-                  <span id="message"></span>
-                </div>
-                <div class="input-container">
-                  <input type="email" placeholder="Email Address" id="email" />
-                  <span id="message"></span>
-                </div>
-                <div class="input-container">
-                  <input type="password" placeholder="Password" id="password" />
-                  <span id="message"></span>
-                </div>
-              </form>
-
-              <div class="claim-trial claim-btn">
-                <button type="submit" class="btn">Claim your Free Trial</button>
+    <main>
+      <div class="wrapper">
+        <div class="wrapper__intro">
+          <h1 class="wrapper__title">Learn to code by watching others</h1>
+          <p class="wrapper__message">
+            See how experienced developers solve problems in real-time. Watching
+            scripted tutorials is great, but understanding how developers think
+            is invaluable.
+          </p>
+        </div>
+        <div class="wrapper__inputs">
+          <p class="wrapper__trials u-text-center">
+            <span class="wrapper__bold">Try it free 7 days</span>
+            <span class="wrapper__reg">then $20/mo. thereafter</span>
+          </p>
+          <div class="wrapper__form">
+            <form>
+              <div class="wrapper__input">
+                <label for="firstname" class="sr-only">Firstname</label>
+                <input
+                  type="text"
+                  id="firstname"
+                  name="textfield"
+                  aria-describedby="firstname-input"
+                  placeholder="First Name"
+                  required
+                />
+                <small id="firstname-input"></small>
               </div>
-
-              <p class="terms-and-service">
+              <div class="wrapper__input">
+                <label for="lastname" class="sr-only">Lastname</label>
+                <input
+                  type="text"
+                  id="lastname"
+                  name="textfield"
+                  aria-describedby="lastname-input"
+                  placeholder="Last Name"
+                  required
+                />
+                <small id="lastname-input"></small>
+              </div>
+              <div class="wrapper__input">
+                <label for="email" class="sr-only">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="emailfield"
+                  aria-describedby="email-input"
+                  placeholder="Email Address"
+                  required
+                />
+                <small id="email-input"></small>
+              </div>
+              <div class="wrapper__input">
+                <label for="password" class="sr-only">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="passwordfield"
+                  aria-describedby="password-input"
+                  placeholder="Password"
+                  required
+                />
+                <small id="password-input"></small>
+              </div>
+              <button type="submit" class="btn">claim your free trial</button>
+              <p class="wrapper__conditions u-text-center">
                 By clicking the button, you are agreeing to our
-                <strong class="t-s">Terms and Services</strong>
+                <span class="wrapper__terms">Terms and Services</span>
               </p>
-            </div>
+            </form>
           </div>
-        </section>
+        </div>
       </div>
     </main>
-
-    <script src="script.js"></script>
   </body>
 </html>

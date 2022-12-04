@@ -1,0 +1,117 @@
+main {
+  width: 95%;
+  max-width: 85rem;
+
+  @include respond(tablet) {
+    width: 90%;
+    max-width: 50rem;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+
+  @include respond(tablet) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__intro {
+    width: 50%;
+    color: $color-default;
+
+    @include respond(tablet) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-family: customFontBold, sans-serif;
+    font-size: clamp(0.9375rem, calc(4vw + 0.759rem), 3.2rem);
+  }
+
+  &__message {
+    margin: 1.5em 0;
+    font-size: clamp(0.875rem, calc(1vw + 0.375rem), 1.3125rem);
+  }
+
+  &__inputs {
+    width: 50%;
+    font-size: clamp(0.875rem, calc(1vw + 0.25rem), 1.125rem);
+
+    @include respond(tablet) {
+      width: 80%;
+    }
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+
+  &__trials {
+    background-color: $color-secondary;
+    color: $color-default;
+    margin-bottom: 1.5em;
+
+    @include b-shadow(0rem 0.5rem 0.05rem rgba($color-tertiary-dark, 0.189));
+    @include b-container(8px, 1em);
+  }
+
+  &__bold,
+  &__reg {
+    padding: 0;
+  }
+
+  &__bold {
+    font-family: customFontBold, sans-serif;
+  }
+
+  &__reg {
+    font-family: customFontRegular, sans-serif;
+  }
+
+  &__form {
+    background-color: $color-default;
+    @include b-shadow(0rem 0.5rem 0.05rem rgba($color-tertiary-dark, 0.189));
+    @include b-container(10px, 2.5em);
+
+    @include respond(laptop-potrait) {
+      @include b-container(10px, 2em);
+    }
+  }
+
+  &__input {
+    padding-bottom: 1.5em;
+
+    & input {
+      width: 100%;
+      border: 1px solid rgba($color-tertiary-dark, 0.2);
+      padding: 1em 2em;
+      border-radius: 5px;
+
+      @include respond(laptop-potrait) {
+        padding: 1em 1.5em;
+      }
+
+      &[type='text'],
+      &[type='email'],
+      &[type='password'],
+      &::placeholder {
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__conditions {
+    font-size: 0.688rem;
+    margin: 1em 0;
+    color: $color-tertiary-grayish;
+  }
+
+  &__terms {
+    font-weight: bold;
+    color: $color-primary;
+  }
+}

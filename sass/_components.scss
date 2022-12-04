@@ -1,0 +1,18 @@
+.btn {
+  width: 100%;
+  color: $color-default;
+  background-color: $color-primary-success;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  @include b-shadow(
+    inset 0rem -0.3rem 0.05rem rgba($color-tertiary-dark, 0.189)
+  );
+  @include b-container(10px, 1em);
+
+  &:active,
+  &:visited {
+    transform: translateY(3px);
+  }
+}

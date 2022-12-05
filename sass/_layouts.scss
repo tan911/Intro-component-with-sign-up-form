@@ -6,6 +6,11 @@ main {
     width: 90%;
     max-width: 50rem;
   }
+
+  @include respond(phone) {
+    height: 100%;
+    padding: 2rem 0 2rem 0;
+  }
 }
 
 .wrapper {
@@ -16,6 +21,10 @@ main {
   @include respond(tablet) {
     flex-direction: column;
     gap: 1.5rem;
+  }
+
+  @include respond(phone) {
+    max-height: 100%;
   }
 
   &__intro {
@@ -45,6 +54,7 @@ main {
     @include respond(tablet) {
       width: 80%;
     }
+
     @include respond(phone) {
       width: 100%;
     }
@@ -73,6 +83,7 @@ main {
   }
 
   &__form {
+    font-size: clamp(0.875rem, calc(1vw + 0.25rem), 1.125rem);
     background-color: $color-default;
     @include b-shadow(0rem 0.5rem 0.05rem rgba($color-tertiary-dark, 0.189));
     @include b-container(10px, 2.5em);

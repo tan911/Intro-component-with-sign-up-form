@@ -53,7 +53,7 @@ Develop the fundamentals of Javascript, HTML, CSS to be comfortable using it in 
 ### Useful resources
 
 - [MDN docs](https://developer.mozilla.org/en-US/) - HTML, CSS, JS docs, during the development.
-- [Stackoverflow](https://www.example.com) - Great community for every developer, programmer etc.
+- [Stackoverflow](https://stackoverflow.com/) - Great community for every developer, programmer etc.
 
 ## Author
 

@@ -1,66 +1,75 @@
-// 'use strict';
+'use strict';
 
-// const firstNameEl = document.getElementById('firstName');
-// const lastNameEl = document.getElementById('lastName');
-// const emailEl = document.getElementById('email');
-// const password = document.getElementById('password');
-// const claimBtn = document.querySelector('.claim-btn');
-// const message = document.getElementById('message');
+const firstName = document.querySelector('#firstname');
+const lastName = document.querySelector('#lastname');
+const email = document.querySelector('#email');
+const password = document.querySelector('#password');
+const btn = document.querySelector('#btn');
 
-// const _inputValidations = function () {
-//   const _fName = firstNameEl.value;
-//   const _lName = lastNameEl.value;
-//   const _email = emailEl.value;
-//   const _password = password.value;
-//   const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+// Check if the password has length of 6 charter
+const getPasswordLength = (input, max, min) => {
+  if (input.value === '') return;
+  if (input.value.trim().length < max || input.value.trim().length < min) {
+    displayError(input, `${errMessage(input)} must be 6 characters length`);
+  } else {
+    displaySuccess(input);
+  }
+};
 
-//   // firstname validation
-//   if (_fName === '' || _fName === null) {
-//     errorMessage(firstNameEl, `Please Enter your ${firstNameEl.placeholder}!`);
-//   } else {
-//     successMessage(firstNameEl);
-//   }
+// Validate email
+// https://stackoverflow.com/questions/46155/how-can-i-validate-an-email-address-in-javascript
+const getEmailIsValid = input => {
+  if (input.value === '') return;
+  const email = String(input.value)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
 
-//   // lastname validation
-//   if (_lName === '' || _lName === null) {
-//     errorMessage(lastNameEl, `Please Enter your ${lastNameEl.placeholder}!`);
-//   } else {
-//     successMessage(lastNameEl);
-//   }
+  if (email !== null) {
+    displaySuccess(input);
+  } else {
+    displayError(input, 'Looks like this is not an email');
+  }
+};
 
-//   // email
-//   if (_email.match(pattern)) {
-//     successMessage(emailEl);
-//   } else {
-//     errorMessage(emailEl, `Plase Enter your ${emailEl.placeholder}!`);
-//   }
+// Display error
+const displayError = (input, err) => {
+  const inputEl = input.parentElement;
+  inputEl.className = 'wrapper__input error';
+  console.log(inputEl);
+  const small = inputEl.querySelector('small');
+  small.textContent = err;
+};
 
-//   // password
-//   if (_password.length >= 8) {
-//     successMessage(password);
-//   } else {
-//     errorMessage(password, `Please Enter your ${password.placeholder}!`);
-//   }
-// };
+// Display success
+const displaySuccess = input => {
+  const inputEl = input.parentElement;
+  inputEl.className = 'wrapper__input success';
+};
 
-// // ERROR
-// const errorMessage = function (input, mes) {
-//   const inputContainer = input.parentElement;
-//   const span = inputContainer.querySelector('span');
-//   input.classList.add('error');
-//   span.classList.add('errorMessage');
-//   span.innerText = mes;
-//   input.style.outline = 'none';
-// };
+//  Validate for empty input value
+const getInputValues = inputs => {
+  inputs.forEach(input => {
+    if (input.value === '') {
+      displayError(input, `${errMessage(input)} cannot be empty`);
+    } else {
+      displaySuccess(input);
+    }
+  });
+};
 
-// // SUCCESS
-// const successMessage = function (input) {
-//   const inputContainer = input.parentElement;
-//   const span = inputContainer.querySelector('span');
-//   input.classList.add('success');
-//   span.classList.remove('errorMessage');
-//   span.innerText = '';
-//   input.style.outline = 'none';
-// };
+// get error message base on input field name
+const errMessage = input => {
+  const inputEl = input.parentElement;
+  const label = inputEl.querySelector('label');
+  return label.textContent;
+};
 
-// claimBtn.addEventListener('click', _inputValidations);
+const init = () => {
+  getInputValues([firstName, lastName, email, password]);
+  getEmailIsValid(email);
+  getPasswordLength(password, 6, 2);
+};
+
+btn.addEventListener('click', init);

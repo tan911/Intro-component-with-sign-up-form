@@ -84,6 +84,7 @@ main {
 
   &__input {
     padding-bottom: 1.5em;
+    position: relative;
 
     & input {
       width: 100%;
@@ -101,6 +102,44 @@ main {
       &::placeholder {
         font-weight: bold;
       }
+    }
+
+    &.error {
+      padding-bottom: 2.5em;
+    }
+
+    &.error input {
+      border: 2px solid $color-primary;
+    }
+
+    &.success input {
+      border: 1.5px solid $color-secondary;
+    }
+
+    & .icon-error {
+      position: absolute;
+      top: 30%;
+      bottom: 30%;
+      transform: translate(-50%, -50%);
+      right: 15px;
+      visibility: hidden;
+    }
+
+    & small {
+      font-style: italic;
+      color: $color-primary;
+      position: absolute;
+      right: 0;
+      bottom: 15px;
+      visibility: hidden;
+    }
+
+    &.error small {
+      visibility: visible;
+    }
+
+    &.error img {
+      visibility: visible;
     }
   }
 

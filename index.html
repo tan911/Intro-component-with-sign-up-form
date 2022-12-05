@@ -31,26 +31,36 @@
           <div class="wrapper__form">
             <form>
               <div class="wrapper__input">
-                <label for="firstname" class="sr-only">Firstname</label>
+                <label for="firstname" class="sr-only">First Name</label>
                 <input
                   type="text"
                   id="firstname"
-                  name="textfield"
+                  name="firstname"
                   aria-describedby="firstname-input"
                   placeholder="First Name"
                   required
                 />
-                <small id="firstname-input"></small>
+                <img
+                  src="/assets/img/icon-error.svg"
+                  alt="icon-error"
+                  class="icon-error"
+                />
+                <small id="firstname-input">Firstname cannot be empty</small>
               </div>
               <div class="wrapper__input">
-                <label for="lastname" class="sr-only">Lastname</label>
+                <label for="lastname" class="sr-only">Last Name</label>
                 <input
                   type="text"
                   id="lastname"
-                  name="textfield"
+                  name="lastname"
                   aria-describedby="lastname-input"
                   placeholder="Last Name"
                   required
+                />
+                <img
+                  src="/assets/img/icon-error.svg"
+                  alt="icon-error"
+                  class="icon-error"
                 />
                 <small id="lastname-input"></small>
               </div>
@@ -59,10 +69,15 @@
                 <input
                   type="email"
                   id="email"
-                  name="emailfield"
+                  name="email"
                   aria-describedby="email-input"
                   placeholder="Email Address"
                   required
+                />
+                <img
+                  src="/assets/img/icon-error.svg"
+                  alt="icon-error"
+                  class="icon-error"
                 />
                 <small id="email-input"></small>
               </div>
@@ -71,14 +86,21 @@
                 <input
                   type="password"
                   id="password"
-                  name="passwordfield"
+                  name="password"
                   aria-describedby="password-input"
                   placeholder="Password"
                   required
                 />
+                <img
+                  src="/assets/img/icon-error.svg"
+                  alt="icon-error"
+                  class="icon-error"
+                />
                 <small id="password-input"></small>
               </div>
-              <button type="submit" class="btn">claim your free trial</button>
+              <button type="submit" class="btn" id="btn">
+                claim your free trial
+              </button>
               <p class="wrapper__conditions u-text-center">
                 By clicking the button, you are agreeing to our
                 <span class="wrapper__terms">Terms and Services</span>
@@ -88,5 +110,6 @@
         </div>
       </div>
     </main>
+    <script src="/js/script.js"></script>
   </body>
 </html>

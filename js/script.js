@@ -6,6 +6,17 @@ const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 const btn = document.querySelector('#btn');
 
+// Validate forms
+const isFormValid = () => {
+  const form = document.querySelectorAll('input');
+
+  for (const el of form) {
+    if (el.value === '') {
+      return false;
+    }
+  }
+};
+
 // Check if the password has length of 6 charter
 const getPasswordLength = (input, max, min) => {
   if (input.value === '') return;
@@ -37,7 +48,6 @@ const getEmailIsValid = input => {
 const displayError = (input, err) => {
   const inputEl = input.parentElement;
   inputEl.className = 'wrapper__input error';
-  console.log(inputEl);
   const small = inputEl.querySelector('small');
   small.textContent = err;
 };
@@ -68,9 +78,21 @@ const errMessage = input => {
 
 const init = e => {
   e.preventDefault();
-  getInputValues([firstName, lastName, email, password]);
-  getEmailIsValid(email);
-  getPasswordLength(password, 6, 2);
+
+  const form = isFormValid();
+  console.log(form);
+
+  if (form === undefined) {
+    const form = document.querySelectorAll('input');
+    for (const el of form) {
+      el.value = '';
+      displaySuccess(el);
+    }
+  } else {
+    getInputValues([firstName, lastName, email, password]);
+    getEmailIsValid(email);
+    getPasswordLength(password, 6, 2);
+  }
 };
 
 btn.addEventListener('click', init);

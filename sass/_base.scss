@@ -152,12 +152,16 @@ $color-tertiary-grayish: hsl(246, 25%, 77%);
 }
 
 body {
-  background-image: url(/assets/img/bg-intro-desktop.png);
+  background-image: url('../assets/img/bg-intro-desktop.png');
   background-color: $color-primary;
   font-family: customFontRegular, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include respond(phone) {
+    background-image: url('../assets/img/bg-intro-mobile.png');
+  }
 }
 
 .u-text-center {

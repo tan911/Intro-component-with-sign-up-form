@@ -66,7 +66,8 @@ const errMessage = input => {
   return label.textContent;
 };
 
-const init = () => {
+const init = e => {
+  e.preventDefault();
   getInputValues([firstName, lastName, email, password]);
   getEmailIsValid(email);
   getPasswordLength(password, 6, 2);

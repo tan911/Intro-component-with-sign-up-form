@@ -119,6 +119,10 @@ main {
     main {
       width: 90%;
       max-width: 50rem; } }
+  @media (max-width: 37.5em) {
+    main {
+      height: 100%;
+      padding: 2rem 0 2rem 0; } }
 
 .wrapper {
   display: flex;
@@ -128,6 +132,9 @@ main {
     .wrapper {
       flex-direction: column;
       gap: 1.5rem; } }
+  @media (max-width: 37.5em) {
+    .wrapper {
+      max-height: 100%; } }
   .wrapper__intro {
     width: 50%;
     color: white; }
@@ -164,6 +171,7 @@ main {
   .wrapper__reg {
     font-family: customFontRegular, sans-serif; }
   .wrapper__form {
+    font-size: clamp(0.875rem, calc(1vw + 0.25rem), 1.125rem);
     background-color: white;
     box-shadow: 0rem 0.5rem 0.05rem rgba(62, 60, 73, 0.189);
     border-radius: 10px;
